@@ -168,3 +168,10 @@ pip-log.txt
 
 *.sublime-project
 *.sublime-workspace
+
+###################
+## JSRegex Project
+###################
+
+components
+node_modules
