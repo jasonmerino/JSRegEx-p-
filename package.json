@@ -1,0 +1,11 @@
+{
+  "name": "jsregex",
+  "version": "0.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "express": "~3.2.6"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
