@@ -63,27 +63,45 @@ var regExStuff = function () {
     ]
   };
 
-  $('#sampleRegex').text('Begin typing your RegEx above.');
+  /**
+   * Cache jQuery selected DOM elements
+   * @type {Object}
+   */
+  var $el = {
+    sample: $('#sampleRegex'),
+    patAndMods: $('#regexPattern, #regexMods'),
+    items: $('#itemTests')
+  };
 
-  $('#regexPattern, #regexMods').on('keyup', function () {
-    $('#regexPattern, #regexMods').css('background', '#fff');
+  var defaultText = 'Begin typing your RegEx above.';
 
-    var pat = $('#regexPattern').val();
-    var mod = $('#regexMods').val();
+  $el.sample.text(defaultText);
+
+  // bind keyup event to regex figurer-outer
+  $el.patAndMods.on('keyup', function () {
+    $el.patAndMods.css('background', '#fff');
+
+    var pat = $('#regexPattern').val(),
+        mod = $('#regexMods').val();
+
+    // if fields are blank then add default text in
     if (pat === '' && mod === '') {
-      $('#sampleRegex').text('Begin typing your RegEx above.');
+      $el.sample.text(defaultText);
     }
     else {
-      $('#sampleRegex').html('<span style="color:#7dc6f2">var</span> <span style="color:#cae682">pattern</span> = /<span class="thePat"></span>/<span class="theMod"></span>;');
-      $('.thePat').text(pat);
-      $('.theMod').text(mod);
+      var markup = '<span style="color:#7dc6f2">var</span>';
+      markup += ' <span style="color:#cae682">pattern</span>';
+      markup += ' = /<span class="thePat">' + pat + '</span>';
+      markup += '/<span class="theMod">' + mod + '</span>;';
+      // replace content of regex example
+      $el.sample.html(markup);
     }
 
     try {
 
       var theRegEx = new RegExp(pat, mod);
 
-      $('#itemTests li').each(function () {
+      $el.items.find('li').each(function () {
         var text = $(this).text();
         if (theRegEx.test(text)) {
           $(this).css('color', '#000');
@@ -106,15 +124,15 @@ var regExStuff = function () {
         }
 
         if (!passes) {
-          $('#regexPattern, #regexMods').css('background', '#ddd');
-          $('#itemTests li').css('color', '#999');
+          $el.patAndMods.css('background', '#ddd');
+          $el.items.find('li').css('color', '#999');
         }
       }
     }
     catch (err) {
       console.warn(err);
-      $('#regexPattern, #regexMods').css('background', '#ddd');
-      $('#itemTests li').css('color', '#999');
+      $el.patAndMods.css('background', '#ddd');
+      $el.items.find('li').css('color', '#999');
     }
   });
 
@@ -122,14 +140,14 @@ var regExStuff = function () {
   return {
 
     renderItemList: function (set) {
-      $('#itemTests').empty();
+      $el.items.empty();
       var listItems = '';
       for (var i = 0; i < dataSets[set]['length']; i++) {
         listItems += '<li></li>';
       }
-      $('#itemTests').append(listItems);
+      $el.items.append(listItems);
       for (var j = 0; j < dataSets[set]['length']; j++) {
-        $('#itemTests li').eq(j).text(dataSets[set][j]);
+        $el.items.find('li').eq(j).text(dataSets[set][j]);
       }
     }
 
