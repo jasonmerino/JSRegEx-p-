@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
-    "express": "~3.2.6"
+    "express": "~3.2.6",
+    "open": "0.0.3"
   },
   "engines": {
     "node": ">=0.8.0"
