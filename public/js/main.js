@@ -70,6 +70,8 @@ var regExStuff = function () {
   var $el = {
     sample: $('#sampleRegex'),
     patAndMods: $('#regexPattern, #regexMods'),
+    pat: $('#regexPattern'),
+    mod: $('#regexMods'),
     items: $('#itemTests')
   };
 
@@ -81,8 +83,9 @@ var regExStuff = function () {
   $el.patAndMods.on('keyup', function () {
     $el.patAndMods.css('background', '#fff');
 
-    var pat = $('#regexPattern').val(),
-        mod = $('#regexMods').val();
+    // pull values from pattern and modifications fields
+    var pat = $el.pat.val(),
+        mod = $el.mod.val();
 
     // if fields are blank then add default text in
     if (pat === '' && mod === '') {
@@ -139,6 +142,10 @@ var regExStuff = function () {
 
   return {
 
+    /**
+     * Renders the item list after a user changes data sets
+     * @param  {String} set The name of the set
+     */
     renderItemList: function (set) {
       $el.items.empty();
       var listItems = '';
