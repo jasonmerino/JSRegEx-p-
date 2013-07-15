@@ -1,0 +1,8 @@
+{
+  "name": "jsregex",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "~2.0.2",
+    "modernizr": "~2.6.2"
+  }
+}

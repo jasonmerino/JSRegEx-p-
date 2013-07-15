@@ -1,6 +1,6 @@
 {
-  "name": "OpenShift-Sample-App",
-  "version": "1.0.0",
+  "name": "jsregex",
+  "version": "0.0.0",
   "description": "OpenShift Sample Application",
   "keywords": [
     "OpenShift",
@@ -26,7 +26,10 @@
 
   "dependencies": {
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "express": "~3.2.6",
+    "open": "0.0.3"
+  },
   "bundleDependencies": [],
 
   "private": true,
