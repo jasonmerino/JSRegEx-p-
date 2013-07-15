@@ -1,6 +1,6 @@
 /**
  * @fileoverview This file contains the regExStuff module. It builds the interface which allows a user to see the affect of a regular expression on various values
- * @author jason@jasonmerinodesign.com (Jason Merino)
+ * @author jasonmerino@gmail.com (Jason Merino)
  */
 
 var regExStuff = function () {
