@@ -1,6 +1,6 @@
-# JSRegex
+# JSRegEx(p)
 
-JSRegex is a tool for learning and testing out JavaScript Regular Expressions. Select a set of data and type your regular expression into the two fields provided. As you type various elements in the data set will get greyed out if they do not match the pattern you have created and elements that retain their dark color will be the remaining set of elements that do match the pattern.
+JSRegEx(p) is a tool for learning and testing out JavaScript Regular Expressions. Select a set of data and type your regular expression into the two fields provided. As you type various elements in the data set will get greyed out if they do not match the pattern you have created and elements that retain their dark color will be the remaining set of elements that do match the pattern.
 
 ## Project Scope/Further Improvements
 
@@ -11,13 +11,13 @@ This project grew out of a need for testing regular expressions with very litte 
 To setup the project locally, clone the repo.
 
 ```bash
-git clone https://github.com/jasonmerino/jsregex.git
+git clone https://github.com/jasonmerino/JSRegEx-p-.git
 ```
 
-Then `cd` into the jsregex folder and install the packages and resources.
+Then `cd` into the JSRegEx-p- folder and install the packages and resources.
 
 ```bash
-cd jsregex && npm install && bower install
+cd JSRegEx-p- && npm install && bower install
 ```
 
 Once that has finished run the Express server and follow the URL!
