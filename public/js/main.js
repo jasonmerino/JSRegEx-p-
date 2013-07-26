@@ -57,6 +57,20 @@ var regExStuff = function () {
       'Y0L0_Th3_C0unTY',
       'qwerty56789'
     ],
+    html: [
+      '<body>',
+      '< form>',
+      '</form>',
+      '<li',
+      '<ul><li></li></ul>',
+      '<em>',
+      '<BODY></BODY>',
+      '<script>',
+      '</script>',
+      '<script></ script >',
+      '< / script >',
+      '<HTML >'
+    ],
     emails: [
       'alice@wonderland.net',
       'jay_gatsby@gmail.com'
